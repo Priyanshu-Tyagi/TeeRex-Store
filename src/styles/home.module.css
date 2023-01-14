@@ -1,0 +1,117 @@
+.container {
+    display: flex;
+}
+
+.productContainer {
+    width: 83%;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+/* ---------------- Product Card Stylings ------------ */
+
+.productCard {
+    padding: 15px;
+    border-radius: 12px;
+    height: min-content;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.detailContainer {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.detailText {
+    font-size: 18px;
+}
+
+.addToCart {
+    border: none;
+    color: whitesmoke;
+    padding: 0 2rem;
+    border-radius: 4px;
+    background-color: rgb(209, 43, 43);
+}
+.addToCart:hover{
+    background-color: rgb(196, 62, 62);
+}
+.qtyContainer>button{
+    border: none;
+    color: whitesmoke;
+    padding: 13px 11px;
+    margin-right: 1px;
+    border-radius: 4px;
+    background-color: rgb(209, 43, 43);
+}
+.qtyContainer>button:hover{
+    background-color: rgb(196, 62, 62);
+}
+
+/* ----------------- Filter Styling ---------------- */
+
+.filterContainer {
+    border-right: 1px solid rgb(221,221,222);
+    width: 17%;
+}
+
+/* ----------------- MOBILE AND TABLET VIEW STYLING ------------------------- */
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        margin-top: 2rem;
+        display: flex;
+    }
+
+    .productContainer {
+        width: 100%;
+        padding: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    /* ---------------- Product Card Stylings ------------ */
+
+    .productCard {
+        padding: 15px;
+        border-radius: 12px;
+        height: min-content;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .detailContainer {
+        display: block;
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .detailText {
+        font-size: 15px;
+    }
+
+    .addToCart {
+        margin-top: 10px;
+        border: none;
+        padding: .7rem 0;
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    /* ----------------- Filter Styling ---------------- */
+
+    .filterContainer {
+        display: none;
+        border: 1px solid red;
+        width: 17%;
+    }
+
+}

@@ -1,0 +1,109 @@
+.cartContainer {
+    width: 70%;
+    padding:  3% 10%;
+}
+.totalContainer{
+    text-align: center;
+    font-size: 32px;
+}
+
+/* ---------------- CART CARD STYLING ------------- */
+
+.cartCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px 15px 15px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    height: min-content;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.cardDetails{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.detailText {
+    font-size: 18px;
+}
+
+.cartBtns{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.delete {
+    border: none;
+    color: whitesmoke;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    background-color: rgb(255, 0, 0);
+}
+
+.delete:hover {
+    background-color: rgb(255, 81, 81);
+}
+.qtybtn {
+    padding: 5px 10px;
+}
+
+/* ----------------- MOBILE AND TABLET VIEW STYLING ------------------------- */
+
+@media screen and (max-width: 768px) {
+
+    .container{
+        display: block;
+    }
+    .cartContainer {
+        width: 97%;
+        margin: auto;
+        margin-top: 30px;
+        padding:  0;
+    }
+    .totalContainer{
+        border: 1px solid green;
+        width: 97%;
+    }
+    
+    /* ---------------- CART CARD STYLING ------------- */
+    
+    .cartCard {
+        padding: 15px 40px 15px 15px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .cardDetails {
+        display: block;
+        justify-content: space-between;
+        width: 60%;
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .detailText {
+        font-size: 18px;
+    }
+    
+    .cartBtns{
+        display: flex;
+        margin-top: 20px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .delete {
+        border: none;
+        color: whitesmoke;
+        padding: .7rem 1.5rem;
+        border-radius: 4px;
+        background-color: rgb(255, 0, 0);
+    }   
+
+}
