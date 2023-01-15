@@ -1,40 +1,53 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
-.navcontainer{
+
+.navcontainer {
     justify-content: space-between;
     padding: 1.5rem 3rem;
     display: flex;
+    color: whitesmoke;
     align-items: center;
-    border-bottom: 1px solid rgb(221,221,222);
+    background-color: rgb(19, 25, 33);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
-.logo{
+
+.logo {
     font-family: cursive;
     font-size: 32px;
     font-weight: 600;
 }
-.logo:hover{
+
+.logo:hover {
     cursor: pointer;
 }
-.contents{
+
+.contents {
     width: min-content;
     display: flex;
     align-items: center;
 }
-.navhead{
+
+.navhead {
     display: block;
     font-size: 26px;
 }
-.navhead:hover{
-    text-decoration: double underline;
+
+.navhead:hover {
     cursor: pointer;
+    font-size: 30px;
+    margin-right: -10px;
 }
-.carticon{
+
+.carticon {
     width: 32px;
     margin-left: 30px;
 }
-.carticon:hover{
+
+.carticon:hover {
     width: 36px;
     margin-left: 26px;
     cursor: pointer;
@@ -43,19 +56,23 @@
 /* ----------------- MOBILE AND TABLET VIEW STYLING ------------------------- */
 
 @media screen and (max-width: 768px) {
-    .navcontainer{
+    .navcontainer {
         padding: 1rem 2rem;
     }
-    .logo{
+
+    .logo {
         font-size: 20px;
     }
-    .navhead{
+
+    .navhead {
         display: none;
     }
-    .carticon{
+
+    .carticon {
         width: 20px;
     }
-    .carticon:hover{
+
+    .carticon:hover {
         width: 24px;
     }
 }

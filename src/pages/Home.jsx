@@ -7,10 +7,10 @@ import Searchbar from '../components/home/Searchbar';
 const Home = ({ cart, setCart }) => {
 
     const [data, setData] = useState([]);
-    // const [cart,setCart] = useState([]);
+    const [showFilter, setShowFilter] = useState(true);
 
-    const getProducts = async () => {
-        await fetch(`https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json`)
+    const getProducts = () => {
+        fetch(`https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json`)
             .then(res => res.json())
             .then(res => setData(res))
     }
@@ -19,22 +19,29 @@ const Home = ({ cart, setCart }) => {
         getProducts();
     }, [])
 
-    useEffect(() => {
-        console.log(cart);
-    }, [cart])
-
     return (
         <div className={style.container}>
-            <div className={style.filterContainer}>
-                <Filter />
-            </div>
-            <div className={style.productContainer}>
-                {data.map((i) => (
-                    <ProductCard key={i.id} data={i} cart={cart} setCart={setCart} />
-                ))}
+            {showFilter ?
+                <div className={style.filterContainer}>
+                    <Filter data={data} setData={setData} getProducts={getProducts} />
+                </div> :
+                <div className={style.filterMobileContainer} onClick={() => setShowFilter(!showFilter)} >
+                    <Filter data={data} setData={setData} getProducts={getProducts} />
+                    <button className={style.donebtn} onClick={() => setShowFilter(!showFilter)}>
+                        Done
+                    </button>
+                </div>
+            }
+            <div className={style.products}>
+                <Searchbar data={data} setData={setData} getProducts={getProducts} show={showFilter} setShow={setShowFilter} />
+                <div className={style.productContainer}>
+                    {data.map((i) => (
+                        <ProductCard key={i.id} data={i} cart={cart} setCart={setCart} />
+                    ))}
+                </div>
             </div>
         </div>
     )
 }
 
-export default Home
+export default Home;

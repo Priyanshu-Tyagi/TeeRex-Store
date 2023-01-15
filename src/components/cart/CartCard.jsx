@@ -1,6 +1,6 @@
 import style from '../../styles/cart.module.css'
 
-const CartCard = ({ data }) => {
+const CartCard = ({ data, handleDelete }) => {
     return (
         <div className={style.cartCard}>
             <img width='30%' src={data.imageURL} alt={data.name} />
@@ -12,7 +12,7 @@ const CartCard = ({ data }) => {
 
                 <div className={style.cartBtns}>
                     <button className={style.qtybtn} disabled>Qty : {data.qty}</button>
-                    <button className={style.delete}>
+                    <button className={style.delete} onClick={()=>handleDelete(data.id)}>
                         Delete
                     </button>
                 </div>

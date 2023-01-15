@@ -5,7 +5,6 @@ const ProductCard = ({ data, cart, setCart }) => {
 
     const [qty, setQty] = useState(1);
     const [show, setShow] = useState(true);
-    // const [cart,setCart] = useState([]);
 
     const addtocart = (item) => {
         const existingItem = cart.find((i) => i.id === item.id);
@@ -34,7 +33,7 @@ const ProductCard = ({ data, cart, setCart }) => {
             <div className={style.detailContainer}>
                 <div className={style.details}>
                     <h3 className={style.detailText}>{data.name}</h3>
-                    <p className={style.detailText}>₹ {data.price} /-</p>
+                    <p className={style.detailText}>₹ {data.price}</p>
                 </div>
                 {
                     show ?
